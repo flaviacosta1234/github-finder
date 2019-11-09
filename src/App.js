@@ -7,7 +7,7 @@ class App extends Component {
     const name = "John Doe";
     return (
       <div className="App">
-        <h1>Hello {name}</h1>
+        <h1>Hello {name.toUpperCase()}</h1>
       </div>
     );
   }
