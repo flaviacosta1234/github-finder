@@ -4,9 +4,10 @@ import "./App.css";
 
 class App extends Component {
   render() {
+    const name = "John Doe";
     return (
       <div className="App">
-        <h1>Hello from react</h1>
+        <h1>Hello {name}</h1>
       </div>
     );
   }
