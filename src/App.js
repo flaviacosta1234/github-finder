@@ -6,9 +6,9 @@ import Navbar from "./components/layout/Navbar";
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <nav className="navbar bg-primary">
         <Navbar />
-      </div>
+      </nav>
     );
   }
 }
