@@ -1,9 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const UserItem = props => {
-  //destructuring - pull the values out from the state
-  const { login, avatar_url, html_url } = props.user;
-
+//destructuring
+//da prop user, queremos apenas o login, avatar_url e htnl_url
+const UserItem = ({ user: { login, avatar_url, html_url } }) => {
   return (
     //irá mostrar uma imagem de acordo com o que está definido no estado
     <div className="card text-center">
@@ -24,4 +24,7 @@ const UserItem = props => {
   );
 };
 
+UserItem.propTypes = {
+  user: PropTypes.object.isRequired
+};
 export default UserItem;

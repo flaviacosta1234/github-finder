@@ -29,6 +29,7 @@ class User extends Component {
     return (
       <div style={userStyle}>
         {this.state.users.map(user => (
+          //o user "todo" está a ser passado como prop para o componente UserItem
           <UserItem key={user.id} user={user} />
         ))}
       </div>
