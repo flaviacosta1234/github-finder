@@ -6,9 +6,9 @@ import Navbar from "./components/layout/Navbar";
 class App extends Component {
   render() {
     return (
-      <nav className="navbar bg-primary">
-        <Navbar />
-      </nav>
+      <div className="App">
+        <Navbar title="Github Finder" />
+      </div>
     );
   }
 }
