@@ -9,19 +9,22 @@ class UserItem extends Component {
   };
 
   render() {
+    //destructuring - pull the values out from the state
+    const { login, avatar_url, html_url } = this.state;
+
     return (
       //irá mostrar uma imagem de acordo com o que está definido no estado
       <div className="card text-center">
         <img
-          src={this.state.avatar_url}
+          src={avatar_url}
           alt=""
           className="round-img"
           style={{ width: "60px" }}
         />
-        <h3>{this.state.login}</h3>
+        <h3>{login}</h3>
 
         <div>
-          <a href={this.state.html_url} className="btn btn-dark btn-sm my-1">
+          <a href={html_url} className="btn btn-dark btn-sm my-1">
             More
           </a>
         </div>
