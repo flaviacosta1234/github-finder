@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-
 import "./App.css";
 import Navbar from "./components/layout/Navbar";
+import UserItem from "./components/users/UserItem";
 
 class App extends Component {
   render() {
-    const numbers = [1, 2, 3, 4];
-
     return (
       <div className="App">
-        <Navbar title={numbers} />
+        <Navbar />
+        <UserItem />
       </div>
     );
   }
