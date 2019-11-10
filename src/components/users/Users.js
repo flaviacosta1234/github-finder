@@ -2,7 +2,6 @@ import React from "react";
 import UserItem from "./UserItem";
 import Spinner from "../layout/Spinner";
 import PropTypes from "prop-types";
-import { pipelineBareFunction } from "@babel/types";
 
 const Users = ({ users, loading }) => {
   if (loading) {
