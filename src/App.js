@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Navbar from "./components/layout/Navbar";
 import Users from "./components/users/Users";
+import Search from "./components/users/Search";
 import axios from "axios";
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
   };
 
   async componentDidMount() {
+    //não funciona
     console.log(process.env.REACT_APP_GITHUB_CLIENT_SECRET);
     this.setState({ loading: true });
 
@@ -27,6 +29,7 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <div className="container">
+          <Search />
           <Users loading={this.state.loading} users={this.state.users} />
         </div>
       </div>
