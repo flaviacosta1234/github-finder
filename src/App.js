@@ -8,7 +8,7 @@ class App extends Component {
   state = {
     //o users inicialmente é um array vazio
     users: [],
-    loading: false
+    loading: true
   };
 
   async componentDidMount() {

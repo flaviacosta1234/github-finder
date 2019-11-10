@@ -1,18 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import UserItem from "./UserItem";
+import Spinner from "../layout/Spinner";
 
-class User extends Component {
-  render() {
+const Users = ({ users, loading }) => {
+  if (loading) {
+    return <Spinner />;
+  } else {
     return (
       <div style={userStyle}>
-        {this.props.users.map(user => (
+        {users.map(user => (
           //o user "todo" está a ser passado como prop para o componente UserItem
           <UserItem key={user.id} user={user} />
         ))}
       </div>
     );
   }
-}
+};
 
 const userStyle = {
   display: "grid",
@@ -20,4 +23,4 @@ const userStyle = {
   gridGap: "1rem"
 };
 
-export default User;
+export default Users;
