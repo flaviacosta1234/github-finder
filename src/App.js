@@ -9,7 +9,8 @@ class App extends Component {
   state = {
     //o users inicialmente é um array vazio
     users: [],
-    loading: false
+    loading: false,
+    alert: null
   };
   //Search Github users
   searchUsers = async text => {
@@ -24,8 +25,13 @@ class App extends Component {
 
   //clear Users from state
   clearUsers = () => this.setState({ users: [], loading: false });
+  //Set Alert
 
+  setAlert = (msg, type) => {
+    this.setState({ alert: { msg, type } });
+  };
   render() {
+    const { users, loading } = this.state;
     return (
       <div className="App">
         <Navbar />
@@ -33,9 +39,10 @@ class App extends Component {
           <Search
             searchUsers={this.searchUsers}
             clearUsers={this.clearUsers}
-            showClear={this.state.users.lenght > 0 ? true : false}
+            showClear={users.lenght > 0 ? true : false}
+            setAlert={this.setAlert}
           />
-          <Users loading={this.state.loading} users={this.state.users} />
+          <Users loading={loading} users={users} />
         </div>
       </div>
     );

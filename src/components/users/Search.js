@@ -18,10 +18,14 @@ export class Search extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    //we're calling a prop , a function in the props called
-    //searchUsers and passing the text
-    this.props.searchUsers(this.state.text);
-    this.setState({ text: "" });
+    if (this.state.text == "") {
+      this.props.setAlert("Please enter something", "light");
+    } else {
+      //we're calling a prop , a function in the props called
+      //searchUsers and passing the text
+      this.props.searchUsers(this.state.text);
+      this.setState({ text: "" });
+    }
   };
 
   render() {
