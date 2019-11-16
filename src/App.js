@@ -12,8 +12,7 @@ class App extends Component {
     loading: false
   };
 
-  /*async componentDidMount() {
-    //não funciona
+  async componentDidMount() {
     console.log(process.env.REACT_APP_GITHUB_CLIENT_SECRET);
     this.setState({ loading: true });
 
@@ -24,11 +23,10 @@ class App extends Component {
     //quando se altera o estado o users passa a ter o resultado da chamada da API
     this.setState({ users: res.data, loading: false });
   }
-*/
-  //search git hub users
+
   searchUsers = async text => {
     const res = await axios.get(
-      `https://api.github.com/search/users?q=${text}client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+      `https://api.github.com/search/users?q=${text}&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
     );
 
     //quando se altera o estado o users passa a ter o resultado da chamada da API
