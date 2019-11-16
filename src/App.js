@@ -9,7 +9,7 @@ class App extends Component {
   state = {
     //o users inicialmente é um array vazio
     users: [],
-    loading: true
+    loading: false
   };
   //Search Github users
   searchUsers = async text => {
@@ -30,7 +30,11 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <div className="container">
-          <Search searchUsers={this.searchUsers} clearUsers={this.clearUsers} />
+          <Search
+            searchUsers={this.searchUsers}
+            clearUsers={this.clearUsers}
+            showClear={this.state.users.lenght > 0 ? true : false}
+          />
           <Users loading={this.state.loading} users={this.state.users} />
         </div>
       </div>
