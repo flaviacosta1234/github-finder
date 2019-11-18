@@ -48,10 +48,7 @@ export class Search extends Component {
           />
         </form>
         {showClear && (
-          <button
-            className="btn btn-light btn-block"
-            onClick={clearUsers} //é passada a função clearUsers como prop
-          >
+          <button className="btn btn-light btn-block" onClick={clearUsers}>
             Clear
           </button>
         )}
