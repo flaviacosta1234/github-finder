@@ -7,7 +7,7 @@ import GithubContext from "../../context/github/githubContext";
 const User = ({ match }) => {
   const githubContext = useContext(GithubContext);
 
-  const { getUser, loading, user, getUserRepos, repos } = githubContext;
+  const { getUser, loading, user, repos, getUserRepos } = githubContext;
 
   useEffect(() => {
     getUser(match.params.login);
@@ -36,13 +36,13 @@ const User = ({ match }) => {
   return (
     <Fragment>
       <Link to="/" className="btn btn-light">
-        Back to Search
+        Back To Search
       </Link>
-      Hireable: {""}
+      Hireable:{" "}
       {hireable ? (
-        <i className="fas fa-check text-sucess" />
+        <i className="fas fa-check text-success" />
       ) : (
-        <i className="fas fa-times text-danger" />
+        <i className="fas fa-times-circle text-danger" />
       )}
       <div className="card grid-2">
         <div className="all-center">
@@ -63,41 +63,40 @@ const User = ({ match }) => {
             </Fragment>
           )}
           <a href={html_url} className="btn btn-dark my-1">
-            Visit Github profile
+            Visit Github Profile
           </a>
           <ul>
             <li>
               {login && (
                 <Fragment>
-                  <strong>Username:</strong>
-                  {login}
+                  <strong>Username: </strong> {login}
                 </Fragment>
               )}
             </li>
+
             <li>
               {company && (
                 <Fragment>
-                  <strong>Company:</strong>
-                  {company}
+                  <strong>Company: </strong> {company}
                 </Fragment>
               )}
             </li>
+
             <li>
               {blog && (
                 <Fragment>
-                  <strong>Website:</strong>
-                  {blog}
+                  <strong>Website: </strong> {blog}
                 </Fragment>
               )}
             </li>
           </ul>
         </div>
       </div>
-      <div className="card-text-center">
-        <div className="badge badge-primary">Followers:{followers}</div>
-        <div className="badge badge-sucess">Followers:{following}</div>
-        <div className="badge badge-light">Public repos:{public_repos}</div>
-        <div className="badge badge-dark">Public gists:{public_gists}</div>
+      <div className="card text-center">
+        <div className="badge badge-primary">Followers: {followers}</div>
+        <div className="badge badge-success">Following: {following}</div>
+        <div className="badge badge-light">Public Repos: {public_repos}</div>
+        <div className="badge badge-dark">Public Gists: {public_gists}</div>
       </div>
       <Repos repos={repos} />
     </Fragment>
